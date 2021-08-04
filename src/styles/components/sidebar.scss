@@ -1,0 +1,128 @@
+.sidebar {
+    position: fixed;
+    z-index: 1020;
+    top: 0;
+    left: 0;
+    width: 256px;
+    height: 100vh;
+
+    background: var(--background-lighter);
+    box-shadow: var(--elevation-4);
+
+    display: flex;
+    flex-direction: column;
+
+    >header {
+        height: 60px;
+        border-bottom: 1px solid var(--background-dark);
+
+        padding-left: 24px;
+        padding-right: 24px;
+
+        display: flex;
+        align-items: center;
+
+        >a {
+            font-weight: bold;
+            font-size: 18px;
+            letter-spacing: 0.0015em;
+        }
+    }
+
+    >main {
+        flex: 1;
+        overflow-y: auto;
+        padding: 24px;
+
+        .user {
+            display: flex;
+            align-items: center;
+
+            gap: 16px;
+
+            img {
+                border-radius: 50%;
+                width: 48px;
+                height: 48px;
+            }
+
+            &-info {
+                &-name {
+                    margin-bottom: 4px;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+
+        .sidebar-navbar {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            margin-top: 32px;
+
+            >a {
+                display: flex;
+                align-items: center;
+
+                .icon:not(:only-child) {
+                    margin-right: 12px;
+                }
+
+                .icon {
+
+                    * {
+                        fill: var(--text-lighter)
+                    }
+                }
+
+                p {
+                    color: var(--text-light)
+                }
+
+                &:hover,
+                &.active {
+                    .icon {
+                        * {
+                            fill: var(--primary-regular)
+                        }
+                    }
+
+                    p {
+                        color: var(--primary-dark)
+                    }
+                }
+
+            }
+        }
+    }
+
+    >footer {
+        padding: 24px;
+    }
+
+    &-closed {
+        width: 68px;
+
+        >main {
+            padding: 24px 0px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+        }
+
+        >footer {
+            .icon {
+                transform: rotate(180deg);
+
+                * {
+                    fill: var(--primary-dark)
+                }
+            }
+        }
+    }
+}

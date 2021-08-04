@@ -1,0 +1,46 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+
+    >thead th {
+        border-bottom: 1px solid var(--background-dark);
+        padding: 16px 0;
+        text-align: left;
+
+        color: var(--text-lighter);
+
+        &:first-child {
+            padding-left: 32px;
+        }
+    }
+
+    >tbody {
+        >tr {
+
+            &:first-child {
+                >td {
+                    padding-top: 24px;
+                }
+            }
+
+            &:last-child {
+                >td {
+                    padding-bottom: 24px;
+                }
+            }
+
+            >td {
+                padding: 8px 8px;
+
+                &:first-child {
+                    padding-left: 32px;
+                }
+
+                &:last-child {
+                    padding-right: 32px;
+                }
+            }
+
+        }
+    }
+}

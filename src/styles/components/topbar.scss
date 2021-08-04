@@ -1,0 +1,13 @@
+.topbar {
+    height: 60px;
+    width: 100%;
+
+    border-bottom: 1px solid var(--background-dark);
+    background: var(--background-lighter);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0px 36px;
+}

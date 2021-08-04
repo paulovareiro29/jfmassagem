@@ -1,0 +1,18 @@
+.admin-page-clients {
+    &-search-input {
+        padding: 16px;
+        width: 100%;
+
+        border: 0;
+        border-radius: 8px;
+
+        &::placeholder {
+            color: var(--text-lighter);
+        }
+
+        color: var(--text-regular);
+
+
+        outline: none;
+    }
+}

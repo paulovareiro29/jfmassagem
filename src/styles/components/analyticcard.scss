@@ -1,0 +1,11 @@
+.analytic-card {
+    .card-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h4 {
+            margin-bottom: 4px;
+        }
+    }
+}

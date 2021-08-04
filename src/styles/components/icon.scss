@@ -1,0 +1,46 @@
+.icon {
+    $colors: primary,
+        text,
+        background,
+        success,
+        danger,
+        warning;
+
+    $color-variants: dark,
+        regular,
+        light,
+        lighter;
+
+    $sizes: 20, 32, 48;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @each $color in $colors {
+        @each $color-variant in $color-variants {
+            &.icon-#{$color}-#{$color-variant} {
+                * {
+                    fill: var(--#{$color}-#{$color-variant});
+                }
+            }
+
+            &.icon-hover-#{$color}-#{$color-variant} {
+                *:hover {
+                    fill: var(--#{$color}-#{$color-variant});
+                }
+            }
+        }
+
+
+    }
+
+    @each $size in $sizes {
+        &.icon-#{$size} {
+            svg {
+                width: #{$size}px;
+                height: #{$size}px;
+            }
+        }
+    }
+}

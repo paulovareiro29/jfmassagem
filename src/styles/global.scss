@@ -1,0 +1,144 @@
+@import './components/typography.scss';
+@import './layout.scss';
+
+$colors: primary,
+text,
+background,
+success,
+danger,
+warning;
+
+$color-variants: dark,
+regular,
+light,
+lighter;
+
+$spacings: 0,
+4,
+8,
+16,
+24,
+32,
+48,
+56;
+
+$cursors: pointer;
+
+:root {
+    --primary-dark: #E3C5A8;
+    --primary-regular: #EED9C4;
+    --primary-light: #F8E5D2;
+    --primary-lighter: #FFF4E9;
+
+    --text-dark: #222222;
+    --text-regular: #343434;
+    --text-light: #525252;
+    --text-lighter: #AFAFAF;
+
+    --background-dark: #EBEBF0;
+    --background-regular: #F2F2F5;
+    --background-light: #FAFAFC;
+    --background-lighter: #FFFFFF;
+
+    --danger-dark: #FF3B3B;
+    --danger-regular: #FF5C5C;
+    --danger-light: #FF8080;
+    --danger-lighter: #FFE5E5;
+
+    --success-dark: #06C270;
+    --success-regular: #39D98A;
+    --success-light: #57EBA1;
+    --success-lighter: #E3FFF1;
+
+    --warning-dark: #FF8800;
+    --warning-regular: #FDAC42;
+    --warning-light: #FCCC75;
+    --warning-lighter: #FFF8E5;
+
+    --transition-time: .3s;
+
+    --elevation-4: 0px 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f8f8f8;
+    color: #343434;
+}
+
+@each $color in $colors {
+    @each $color-variant in $color-variants {
+        .color-#{$color}-#{$color-variant} {
+            color: var(--#{$color}-#{$color-variant});
+        }
+
+        .bg-#{$color}-#{$color-variant} {
+            background: var(--#{$color}-#{$color-variant});
+        }
+
+        .hover-color-#{$color}-#{$color-variant}:hover {
+            color: var(--#{$color}-#{$color-variant});
+        }
+
+        .hover-bg-#{$color}-#{$color-variant}:hover {
+            background: var(--#{$color}-#{$color-variant});
+        }
+    }
+
+}
+
+@each $spacing in $spacings {
+
+    //margin
+    .mb-#{$spacing} {
+        margin-bottom: #{$spacing}px !important;
+    }
+
+    .mt-#{$spacing} {
+        margin-top: #{$spacing}px !important;
+    }
+
+    .mr-#{$spacing} {
+        margin-right: #{$spacing}px !important;
+    }
+
+    .ml-#{$spacing} {
+        margin-left: #{$spacing}px !important;
+    }
+
+    .m-#{$spacing} {
+        margin: #{$spacing}px !important;
+    }
+
+    //padding
+    .pb-#{$spacing} {
+        padding-bottom: #{$spacing}px !important;
+    }
+
+    .pt-#{$spacing} {
+        padding-top: #{$spacing}px !important;
+    }
+
+    .pr-#{$spacing} {
+        padding-right: #{$spacing}px !important;
+    }
+
+    .pl-#{$spacing} {
+        padding-left: #{$spacing}px !important;
+    }
+
+    .p-#{$spacing} {
+        padding: #{$spacing}px !important;
+    }
+}
+
+@each $cursor in $cursors {
+    .cursor-#{$cursor}{
+        cursor: $cursor;
+    }
+}

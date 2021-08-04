@@ -1,0 +1,102 @@
+.button {
+    $height: 32px;
+    $height-small: 24px;
+    $height-large: 40px;
+
+    cursor: pointer;
+    border-radius: 8px;
+    border: 0;
+
+    height: $height;
+    padding-right: $height;
+    padding-left: $height;
+
+    &-small {
+        height: $height-small;
+        padding-right: $height-small;
+        padding-left: $height-small;
+    }
+
+    &-large {
+        height: $height-large;
+        padding-right: $height-large;
+        padding-left: $height-large;
+    }
+
+    &-fullWidth {
+        width: 100%;
+    }
+}
+
+.button {
+    $variants: primary,
+        text,
+        background,
+        success,
+        danger,
+        warning;
+    $transition-time: calc(var(--transition-time) / 2);
+
+    transition:
+        background-color $transition-time,
+        color $transition-time,
+        border-color $transition-time;
+
+    background: transparent;
+
+
+    @each $variant in $variants {
+        &-#{$variant} {
+            background: var(--#{$variant}-regular);
+            color: var(--background-lighter);
+
+            &:hover {
+                background: var(--#{$variant}-dark);
+            }
+
+            &:disabled {
+                background: var(--#{$variant}-lighter);
+            }
+        }
+
+        &-outlined-#{$variant} {
+            background: transparent;
+            border: 1px solid var(--#{$variant}-regular);
+            color: var(--#{$variant}-regular);
+
+            &:hover {
+                background: transparent;
+                border: 1px solid var(--#{$variant}-dark);
+                color: var(--#{$variant}-dark);
+            }
+
+            &:disabled {
+                background: transparent;
+                border: 1px solid var(--#{$variant}-lighter);
+                color: var(--#{$variant}-lighter);
+            }
+        }
+    }
+
+    &:disabled {
+        cursor: not-allowed;
+    }
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    &-icon-right {
+        >.icon:not(:only-child) {
+            margin-left: 12px;
+        }
+    }
+
+    &-icon-left {
+        >.icon:not(:only-child) {
+            margin-right: 12px;
+        }
+    }
+}
